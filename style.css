@@ -624,7 +624,7 @@ a:hover{
 .footer{
     padding-top:2rem;
 	margin:0 auto;
-    border-top:solid 1px #eff0f1
+    border-top:solid 1px #eff0f1;
 	text-align: center;
 }
 @media screen and (min-width: 64em){
