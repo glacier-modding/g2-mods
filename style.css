@@ -125,19 +125,17 @@ ul#horizontal-list li {
 }
 
 .GridItem-HITMAN {
-	placeholder
 }
 
 .GridItem-H2 {
-	placeholder
 }
 
 .GridItem-DEMD {
-	background-image: url("https://g2-mods.com/images/demd.jpg)
+	background-image: url("https://g2-mods.com/images/demd.jpg);
 }
 
 .GridItem-HMA {
-	background-image: url("https://g2-mods.com/images/hma.jpg)
+	background-image: url("https://g2-mods.com/images/hma.jpg);
 }
 
 .project-name{
