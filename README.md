@@ -1,4 +1,4 @@
-# G2-Mods.com
+# https://glacier-modding.github.io/g2-mods/
 
 A website dedicated to hosting/documenting modifications for Glacier² Engine games.
 HITMAN 2 is the main focus atm, but hopefully ends up expanding to all Glacier² Engine games, more work pls @B3LYP <3
