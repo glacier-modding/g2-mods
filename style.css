@@ -1,4 +1,3 @@
-/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
 html{
     font-family:sans-serif;
@@ -621,7 +620,7 @@ a:hover{
     background-color:#eff0f1;
     border:0
 }
-.site-footer{
+.footer{
     padding-top:2rem;
     margin-top:2rem;
     border-top:solid 1px #eff0f1
