@@ -11,3 +11,11 @@ HITMAN 2 is the main focus at the moment, but modifications will likely hopefull
 
 I've started work on this website but may hit points of procrasination during building the website. 
 Bare with me on our journey to success.
+
+## TODO: 
+Replace index.html with mods/mods.html
+Delete mods/mods.html
+Incur mods/mods.html as the homepage
+Fixup the grid on mods/mods.html
+Start building out pages for each game
+Start adding a few mods
