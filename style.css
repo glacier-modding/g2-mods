@@ -124,6 +124,10 @@ ul#horizontal-list li {
 	text-align: center;
 }
 
+.griditem-demd {
+	background-image: url(g2-mods.com\images\demd.jpg);
+}
+
 .project-name{
     margin-top:0;
     margin-bottom:0.1rem
