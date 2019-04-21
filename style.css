@@ -113,7 +113,9 @@ ul#horizontal-list li {
 
 /* Grid Shit */
 .game-container {
-  display: inline-grid;
+	display: inline-grid;
+	grid-row-gap: 50px;
+	grid-column-gap: 50px;
 }
 
 .project-name{
