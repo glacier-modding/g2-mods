@@ -441,8 +441,6 @@ a:hover{
 	background: url(images/bar-bg.jpg) repeat-x;
 	text-align: center;
 	margin: auto;
-	display: table;   /* Allow the centering to work */
-	margin: 0 auto;
 }
 
 ul#horizontal-list {
