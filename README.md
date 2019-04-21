@@ -6,7 +6,7 @@ A work in progress website dedicated to hosting/documenting modifications for Gl
 
 - HITMAN
 - HITMAN 2
-- Deus Ex: Mankind Dividied
+- Deus Ex: Mankind Divided
 - Hitman: Absolution
 
 HITMAN 2 is the main focus at the moment, but modifications will likely hopefully end up expanding to all Glacier² Engine games, more work pls @B3LYP & @MrMike <3
