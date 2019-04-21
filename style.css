@@ -116,6 +116,7 @@ ul#horizontal-list li {
 	display: grid;
 	grid-row-gap: 50px;
 	grid-column-gap: 50px;
+	justify-items: center;
 	margin: auto;
 	text-align: center;
 }
