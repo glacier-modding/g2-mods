@@ -643,8 +643,8 @@ a:hover{
 .site-footer-owner{
     display:block;
     font-weight:bold
+	text-align: center;
 }
 .site-footer-credits{
     color:#819198
 }
- 
