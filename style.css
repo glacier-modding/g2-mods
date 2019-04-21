@@ -126,10 +126,14 @@ ul#horizontal-list li {
 
 .griditem-demd {
 	background-image: url(images/demd.jpg);
+	background-position: center;
+	background-size: auto;
 }
 
 .griditem-hma {
 	background-image: url(images/hma.jpg);
+	background-position: center;
+	background-size: auto;
 }
 
 .project-name{
