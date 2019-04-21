@@ -448,6 +448,7 @@ ul#horizontal-list {
 	min-width: 696px;
 	list-style: none;
 	padding-top: 20px;
+	text-align: center;
 	}
 ul#horizontal-list li {
 	display: inline;
