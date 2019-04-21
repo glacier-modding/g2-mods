@@ -436,16 +436,15 @@ a:hover{
         padding:2rem 1rem
     }
 }
-#menu-outer {
+.menu-outer {
 	height: 84px;
 	background: url(images/bar-bg.jpg) repeat-x;
 	text-align: center;
 	margin: auto;
-}
-.table {
 	display: table;   /* Allow the centering to work */
 	margin: 0 auto;
 }
+
 ul#horizontal-list {
 	min-width: 696px;
 	list-style: none;
