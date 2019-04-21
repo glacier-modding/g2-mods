@@ -13,9 +13,9 @@ I've started work on this website but may hit points of procrasination during bu
 Bare with me on our journey to success.
 
 ## TODO: 
-Replace index.html with mods/mods.html
-Delete mods/mods.html
-Incur mods/mods.html as the homepage
-Fixup the grid on mods/mods.html
-Start building out pages for each game
-Start adding a few mods
+- Replace index.html with mods/mods.html
+- Delete mods/mods.html
+- Incur mods/mods.html as the homepage
+- Fixup the grid on mods/mods.html
+- Start building out pages for each game
+- Start adding a few mods
