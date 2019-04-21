@@ -624,6 +624,7 @@ a:hover{
     padding-top:2rem;
 	margin:0 auto;
     border-top:solid 1px #eff0f1
+	text-align: center;
 }
 @media screen and (min-width: 64em){
     .site-footer{
@@ -643,5 +644,4 @@ a:hover{
 .site-footer-owner{
     display:block;
     font-weight:bold
-	text-align: center;
 }
