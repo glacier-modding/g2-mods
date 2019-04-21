@@ -124,20 +124,20 @@ ul#horizontal-list li {
 	text-align: center;
 }
 
-.HITMAN {
+.GridItem-HITMAN {
 	placeholder
 }
 
-.H2 {
+.GridItem-H2 {
 	placeholder
 }
 
-.DEMD {
-	background-image: https://g2-mods.com/images/demd.jpg
+.GridItem-DEMD {
+	background-image: url("https://g2-mods.com/images/demd.jpg)
 }
 
-.HMA {
-	background-image: https://g2-mods.com/images/hma.jpg
+.GridItem-HMA {
+	background-image: url("https://g2-mods.com/images/hma.jpg)
 }
 
 .project-name{
