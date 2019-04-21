@@ -125,7 +125,11 @@ ul#horizontal-list li {
 }
 
 .griditem-demd {
-	background-image: url(g2-mods.com/images/demd.jpg);
+	background-image: url(images/demd.jpg);
+}
+
+.griditem-hma {
+	background-image: url(images/hma.jpg);
 }
 
 .project-name{
