@@ -436,7 +436,7 @@ a:hover{
         padding:2rem 1rem
     }
 }
-.menu-outer {
+#menu-outer {
 	height: 84px;
 	background: url(images/bar-bg.jpg) repeat-x;
 }
@@ -449,9 +449,9 @@ ul#horizontal-list {
 	list-style: none;
 	padding-top: 20px;
 	}
-	ul#horizontal-list li {
-		display: inline;
-	}
+ul#horizontal-list li {
+	display: inline;
+}
 .project-name{
     margin-top:0;
     margin-bottom:0.1rem
