@@ -1,6 +1,4 @@
-# https://glacier-modding.github.io/g2-mods/
-
-## g2-mods.com
+# g2-mods.com
 
 A work in progress website dedicated to hosting/documenting modifications for Glacier² Engine games.
 
