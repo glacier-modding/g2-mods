@@ -114,8 +114,11 @@ ul#horizontal-list li {
 /* Grid Shit */
 .game-container {
 	display: grid;
-	grid-row-gap: 50px;
-	grid-column-gap: 50px;
+	grid-row-gap: 25px;
+	grid-column-gap: 25px;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas: ". ." ". .";
 	justify-items: center;
 	margin: auto;
 	text-align: center;
