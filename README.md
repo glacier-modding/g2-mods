@@ -1,3 +1,6 @@
 # Glacier-Mods.com
 
-I should start working on this but hit procrasination.
+A website dedicated to hosting/documenting modifications for Glacier² Engine games.
+HITMAN 2 is the main focus atm, but hopefully ends up expanding to all Glacier² Engine games.
+
+I've started work on this but may hit points of procrasination
