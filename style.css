@@ -96,7 +96,7 @@ a:hover{
 }
 
 /* Navigation menu up top of page below header */
-ul#horizontal-list {
+div.menu-outer ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -104,16 +104,16 @@ ul#horizontal-list {
   background-color: #1f2125;
 }
 
-li {
+div.menu-outer li {
   float: left;
   border-right:1px solid #bbb;
 }
 
-li:last-child {
+div.menu-outer li:last-child {
   border-right: none;
 }
 
-li a {
+div.menu-outer li a {
   display: block;
   color: #05be99;
   text-align: center;
@@ -121,7 +121,7 @@ li a {
   text-decoration: none;
 }
 
-li a:hover:not(.active) {
+div.menu-outer li a:hover:not(.active) {
   background-color: #111;
 }
 
@@ -265,4 +265,10 @@ li a:hover:not(.active) {
 .site-footer-owner{
     display:block;
     font-weight:bold
+}
+
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -1,0 +1,110 @@
+<html>
+    <head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#157878">
+		<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+        <link rel="stylesheet" href="../style.css">
+		<title>HITMAN²</title>
+	</head>
+	<body>
+		<!--TOP LEFT HOME BUTTON/LOGO-->
+		<div class="logo">
+			<a href="http://g2-mods.com/">Glacier² Mods</a>
+		</div>
+		<!--HEADER-->
+        <div class="page-header">
+            <h1 class="project-name">Glacier Engine Game Modifications</h1>
+            <h2 class="project-tagline">When I get around to it...</h2>
+            <a href="https://github.com/glacier-modding/g2-mods" class="btn">Website Source available on GitHub</a>
+        </div>
+		<!--NAVIGATION BAR-->
+		<div class="menu-outer">
+			<ul id="horizontal-list">
+				<li><a href="https://g2-mods.com/">Home</a></li>
+				<li><a href="https://g2-mods.com/tools/tools">Tools</a></li>
+				<li><a href="https://g2-mods.com/resources/">Resources</a></li>
+				<li><a href="https://github.com/orgs/glacier-modding/people">G² Mod Gang</a></li>
+			</ul>
+		</div>
+        <div class="main-content">
+            <h1 id="g2-modscom">H2 Texture Modding</h1>
+		</div>
+
+		<h4 style="padding-left: 40px;"><img class="aligncenter" src="https://i.notex.app/Cot3mKv.png" /></h4>
+		<h4 style="text-align: center; max-width: 100%;"><span style="color: #cc99ff;">For Hitman 2016 please use this tutorial written by HHCHunter: </span></h4>
+		<h4 style="text-align: center; max-width: 100%;"><span style="color: #cc99ff;"><a style="color: #cc99ff;" href="https://www.reddit.com/r/HiTMAN/comments/62klik/hitman_texture_modding_tutorial/">https://www.reddit.com/r/HiTMAN/comments/62klik/hitman_texture_modding_tutorial/</a></span></h4>
+		<h4>Requirements</h4>
+		<ul>
+		    <li><a href="https://aluigi.altervista.org/quickbms.htm">QuickBMS</a> (With the <a href="https://raw.githubusercontent.com/pawREP/ZHM5PatchBuilder/master/QuickBMS_script/Hitman2_rpkg.bms">Hitman 2 RPKG script</a>)</li>
+		    <li><a href="https://github.com/pawREP/ZHM5PatchBuilder">Hitman 2 RPKG Patch Builder</a> (Thank you pawREP for this tool)</li>
+		    <li><a href="https://www.richwhitehouse.com/index.php?content=inc_projects.php&amp;showproject=91">Noesis</a> (With <a href="https://notex.app/tex_Hitman2_PC_dat_vap.py">Hitman 2's Texture Plugin</a>)</li>
+		    <li><a href="https://www.adobe.com/au/products/photoshop.html">Photoshop</a> (With <a href="https://developer.nvidia.com/nvidia-texture-tools-adobe-photoshop">Nvidia's DDS Plugin</a>) or <a href="https://www.getpaint.net/">Paint.net</a> (With the <a href="https://forums.getpaint.net/topic/111731-dds-filetype-plus-2019-01-30/">DDS FileType Plus</a> plugin)<br /><em>Note: Gimp may also work if you can find a DDS plugin for it, but I have not tried it.</em></li>
+		    <li>Hex Editor (I use <a href="https://mh-nexus.de/en/hxd/">HxD</a>)</li>
+		</ul>
+		<h4> </h4>
+		<h4>Known Issues</h4>
+		<ul>
+		    <li>Using Paint.net seems to cause ghosting issues with the textures in-game</li>
+		</ul>
+		<p>&nbsp;</p>
+		<h4>Part I - Downloading the required tools</h4>
+		<p>First of all you will need to download all the required tools above. I suggest having QuickBMS, Noesis and Patch Builder laid out like this with their required scripts placed like so:</p>
+		<p>📁Hitman</p>
+		<p style="padding-left: 30px;">📁Tools</p>
+		<p style="padding-left: 60px;">📁QuickBMS</p>
+		<p style="padding-left: 90px;">🗄️Hitman2_rpkg.bms</p>
+		<p style="padding-left: 60px;">📁Noesis</p>
+		<p style="padding-left: 90px;">📁plugins</p>
+		<p style="padding-left: 120px;">📁python</p>
+		<p style="padding-left: 150px;">🗄️tex_Hitman2_PC_dat_vap.py</p>
+		<p style="padding-left: 60px;">📁PatchBuilder</p>
+		<p style="padding-left: 90px;">📁modified</p>
+		<p style="padding-left: 150px;">🗄️your modified textures will go here</p>
+		<p>I won't go into explaining how to install the Photoshop or Paint.net plugins required for DDS texture suppot since those already come with their own instructions.</p>
+		<h4>Part II - Extracting the required files from the game</h4>
+		<p>First you will need to open a command prompt/powershell window in the folder where QuickBMS is and run this command to extract the texture files from the game's rpkg archives:</p>
+		<blockquote>
+		    <p style="max-width: 100%;">quickbms_4gb_files.exe -f TEXD\* -k -d Hitman2_rpkg.bms "path\to\steamapps\common\HITMAN2\Runtime\chunk0.rpkg" unpacked</p>
+		</blockquote>
+		<p>Chunk0 contains all the non level specific textures. If you want to extract textures for a specific mission please see the information below:</p>
+		<p style="padding-left: 30px;">chunk0 = Base game + ICA Facility + New Zealand<br />dlc0 = Paris<br />dlc1 = Sapienza<br />dlc2 = Marrakesh<br />dlc3 = Marrakesh and Sapienza files<br />dlc4 = Bangkok<br />dlc5 = Colorado<br />dlc6 = Hokkaido<br />dlc7 = New Zealand (Is in chunk0)<br />dlc8 = Miami<br />dlc9 = Colombia<br />dlc10 = Mumbai<br />dlc11 = Whittleton Creek<br />dlc12 = The Ark Society<br />dlc13 = Himmelstein<br />dlc14 = Hantu Port</p>
+		<p>The patch archives just include updated versions and new files, so if you want to extract textures from one of the ET missions, you would most likely get that from the patch archives instead.</p>
+		<h4>Part III - Converting the texture files</h4>
+		<p>Since the texture files from the game have their own proprietary headers in them, you will need to convert them using Noesis. Before doing this, please make sure you have copied the Hitman script for Noesis into the required folder that is shown in the first part of this guide. Now that that's out of the way, you can open Noesis. Open up the TEXD folder in Noesis by browsing to it and you should then be greeted with a list of all the textures:</p>
+		<p><img style="max-width: 100%;" src="https://i.notex.app/HX4HKCc.png" /></p>
+		<p>Unfortunately they only have hashes for their file names so finding a specific texture can be a bit tricky and tedious. But once you do find the texture you would like to modify, note down it's file name in a text document. Also you'll need to note down the specific format for your chosen texture file as well, to do this you will need to open the "Data Viewer" in Noesis</p>
+		<p><img style="max-width: 100%;" src="https://i.notex.app/ZMmwQ0B.png" /></p>
+		<p>When you have this open, expand Model &gt; Textures &gt; Texture 0 and you should see "Type: #"</p>
+		<p><img style="max-width: 100%;" src="https://i.notex.app/aXY4kjH.png" /></p>
+		<p>Here is what all the different types are:</p>
+		<p style="padding-left: 30px;">Type 1 = R8G8<br />Type 2 = A8<br />Type 3 = BC1/DXT1<br />Type 4 = BC3/DXT5<br />Type 5 = BC4/ATI1<br />Type 6 = BC5/ATI2<br />Type 7 = BC7</p>
+		<p>Once you've done all that you can now convert the texture by right clicking it in Noesis and then choosing "Export":</p>
+		<p><img style="max-width: 100%;" src="https://i.notex.app/Ea21XAh.png" /></p>
+		<p>Once you click that you'll be greeted with this window:</p>
+		<p><img style="max-width: 100%;" src="https://i.notex.app/PHcfC4U.png" /></p>
+		<p>You will need to choose .dds as the main output type, none of the other settings need to be modified. You can now press "Export".</p>
+		<h4>Part <span class="md-raw-html">IV - Modifying the texture</span></h4>
+		<p>Head into the TEXD folder in Windows Explorer and search for the file name that you noted down earlier. You should see two files, the original and the converted file. Please don't delete the original file, it is needed for the final part.</p>
+		<p>Open the DDS in either Photoshop or Paint.net and make your desired modifications. After that you can save it as a DDS file. Make sure you save it as the right format that you noted down earlier. You can also save as no alpha or alpha. If your texture doesn't have any transparency, you can just save it as no alpha. Make sure MIP Map generation is set to "Generate MIP maps" otherwise the texture will vanish if you get too far away from it in-game.</p>
+		<p><img style="max-width: 100%;" src="https://i.notex.app/cc8GZKs.png" /></p>
+		<p>Once that's saved you can now open it in a hex editor alongside the original texture as well.</p>
+		<p>You will need to copy this section from the original texture:</p>
+		<p><img style="max-width: 100%;" src="https://i.notex.app/iciE2mu.png" /></p>
+		<p>and replace this section in your new texture:</p>
+		<p><img style="max-width: 100%;" src="https://i.notex.app/Sa2tITo.png" /></p>
+		<p>So it should look like this in the end:</p>
+		<p><img style="max-width: 100%;" src="https://i.notex.app/kPR7ABl.png" /></p>
+		<p>Once you've done that you can save it.</p>
+		<h4>Part V - Rebuilding the modified texture back into the game</h4>
+		<p>You will now need to use the patch builder to create a patch archive that will contain your modified textures. See instructions for the patch builder here: <a href="https://github.com/pawREP/ZHM5PatchBuilder">https://github.com/pawREP/ZHM5PatchBuilder</a></p>
+		<p>&nbsp;</p>
+
+		<div class="footer">
+			<span class="site-footer-owner">
+				<a href="https://github.com/glacier-modding/g2-mods">g2-mods.com</a> is maintained by the <a href="https://github.com/glacier-modding">glacier-modding</a> organization.
+			</span>
+		</div>
+    </body>
+</html>
