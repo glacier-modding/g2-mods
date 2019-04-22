@@ -96,20 +96,37 @@ a:hover{
 }
 
 /* Navigation menu up top of page below header */
-.menu-outer {
-	height: 84px;
-	background: url(images/bar-bg.jpg) repeat-x;
-	text-align: center;
-	margin: auto;
+ul#horizontal-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1f2125;
 }
 
-ul#horizontal-list {
-	min-width: 696px;
-	list-style: none;
-	padding-top: 20px;
-	}
-ul#horizontal-list li {
-	display: inline;
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: #05be99;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
 }
 
 /* Grid Shit */
