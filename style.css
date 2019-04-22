@@ -75,7 +75,7 @@ a:hover{
 
 /* Top left Logo / Home Button */
 .logo {
-	background-color: 1f2125;
+	background-color: #1f2125;
 }
 
 .logo a {
@@ -84,7 +84,7 @@ a:hover{
 	background-repeat: no-repeat;
 	padding-left: 75px;
 	display: block;
-	color: 08ac8c;
+	color: #08ac8c;
 	font-size: 2em;
 }
 
