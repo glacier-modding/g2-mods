@@ -253,10 +253,14 @@ li a:hover:not(.active) {
     margin-bottom:1em
 }
 .footer{
+	display:block;
     padding-top:2rem;
+    height:50px;
 	margin:0 auto;
-    border-top:solid 1px #eff0f1;
 	text-align: center;
+	padding: 15px;
+	overflow: hidden;
+	background-color: #1f2125;
 }
 .site-footer-owner{
     display:block;
