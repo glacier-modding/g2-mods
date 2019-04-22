@@ -84,7 +84,7 @@ a:hover{
 	background-repeat: no-repeat;
 	padding-left: 75px;
 	display: block;
-	line-height: 4;
+	font-size: 2em;
 }
 
 .page-header {
