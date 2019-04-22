@@ -125,16 +125,40 @@ ul#horizontal-list li {
 	text-align: center;
 }
 
+.griditem-h2016 {
+	text-align: center;
+}
+
+.griditem-h2016 img {
+	max-width:100%;
+	max-height:100%;
+}
+
+.griditem-h2 {
+	text-align: center;
+}
+
+.griditem-h2 img {
+	max-width:100%;
+	max-height:100%;
+}
+
 .griditem-demd {
-	background-image: url(images/games/demd.jpg);
-	background-position: center;
-	background-size: auto;
+	text-align: center;
+}
+
+.griditem-demd img {
+	max-width:100%;
+	max-height:100%;
 }
 
 .griditem-hma {
-	background-image: url(images/games/hma.jpg);
-	background-position: center;
-	background-size: auto;
+	text-align: center;
+}
+
+.griditem-hma img {
+	max-width:100%;
+	max-height:100%;
 }
 
 .project-name{
