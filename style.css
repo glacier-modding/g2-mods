@@ -73,6 +73,20 @@ a:hover{
     }
 }
 
+/* Top left Logo / Home Button */
+.logo {
+	background-color: 1f2125;
+}
+
+.logo a {
+	background-image: url('images/g2logo.png');
+	background-position: left;
+	background-repeat: no-repeat;
+	padding-left: 75px;
+	display: block;
+	line-height: 4;
+}
+
 .page-header {
     color:#fff;
     text-align:center;
@@ -111,13 +125,13 @@ ul#horizontal-list li {
 }
 
 .griditem-demd {
-	background-image: url(images/demd.jpg);
+	background-image: url(images/games/demd.jpg);
 	background-position: center;
 	background-size: auto;
 }
 
 .griditem-hma {
-	background-image: url(images/hma.jpg);
+	background-image: url(images/games/hma.jpg);
 	background-position: center;
 	background-size: auto;
 }
