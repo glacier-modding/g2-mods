@@ -257,11 +257,11 @@ div.menu-outer li a:hover:not(.active) {
     background-color: #1f2125;
     font-size:13px;
     padding: 15px;
-    margin-left: 650px;
-    margin-right: 650px;
     text-align: center;
     position: fixed;
-    bottom: 0;  
+    bottom: 0;
+    left: 0;
+    right: 0;
     height: 50px;
     box-shadow: 0 150vh 0 150vh #1f2125;
 } 
