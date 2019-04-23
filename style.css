@@ -253,20 +253,19 @@ div.menu-outer li a:hover:not(.active) {
     margin-bottom:1em
 }
 .footer{
-	display:block;
-    padding-top:2rem;
-    height:50px;
-	margin:0 auto;
-	text-align: center;
-	padding: 15px;
-	overflow: hidden;
-	background-color: #1f2125;
-}
-.site-footer-owner{
-    display:block;
-    font-weight:bold
+    height: 50px;
 }
 
+.footer-content{
+    background-color: #1f2125;
+    padding: 15px;
+    margin-left: 650px;
+    margin-right: 650px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;  
+    box-shadow: 0 150vh 0 150vh #1f2125;
+} 
 .aligncenter {
     display: block;
     margin-left: auto;
