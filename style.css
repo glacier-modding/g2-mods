@@ -252,18 +252,17 @@ div.menu-outer li a:hover:not(.active) {
 .main-content p{
     margin-bottom:1em
 }
-.footer{
-    height: 50px;
-}
 
 .footer-content{
     background-color: #1f2125;
+    font-size:13px;
     padding: 15px;
     margin-left: 650px;
     margin-right: 650px;
     text-align: center;
     position: fixed;
     bottom: 0;  
+    height: 50px;
     box-shadow: 0 150vh 0 150vh #1f2125;
 } 
 .aligncenter {
