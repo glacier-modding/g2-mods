@@ -142,40 +142,11 @@ div.menu-outer li a:hover:not(.active) {
 	text-align: center;
 }
 
-.griditem-h2 a {
-	text-align: center;
-}
-
-.griditem-h2 img {
+.griditem-img img {
 	max-width:100%;
 	max-height:100%;
-}
-
-.griditem-h2016 a {
-	text-align: center;
-}
-
-.griditem-h2016 img {
-	max-width:100%;
-	max-height:100%;
-}
-
-.griditem-demd a {
-	text-align: center;
-}
-
-.griditem-demd img {
-	max-width:100%;
-	max-height:100%;
-}
-
-.griditem-hma a {
-	text-align: center;
-}
-
-.griditem-hma img {
-	max-width:100%;
-	max-height:100%;
+    height: auto;
+    width: auto\9;
 }
 
 .project-name{
@@ -252,7 +223,6 @@ div.menu-outer li a:hover:not(.active) {
 .main-content p{
     margin-bottom:1em
 }
-
 .footer-content{
     background-color: #1f2125;
     font-size:13px;
