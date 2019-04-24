@@ -245,38 +245,43 @@ div.menu-outer li a:hover:not(.active) {
 
 .mod-container {
     display: grid;
-    grid-row-gap: 25px;
-    grid-column-gap: 25px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    margin: 50px;
-    text-align: center;
+    padding: 0 35px;
+    grid-template-columns: repeat(auto-fit, 220px);
+    grid-gap: 35px;
+
+    /* Footer hack until it's fixed */
+    margin-bottom: 85px;
 }
 
 .griditem-mod {
-    position: absolute;
-    max-width: 100%;
-    width: auto;
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 3);
+
+    /* Needs the JS fix, but placehold until we fix it. */
+    background-image: url('/images/mods/placeholder.png');
+    width: 214px;
+    height: 338px;
+}
+
+/* Noke it from orbit */
+.griditem-mod > img {
+    visibility: hidden;
+    display: none;
 }
 
 .griditem-mod-content-name {
-    top:0px;
-    width: 100%;
-    height: 50px;
-    font-size:16px;
+    grid-row-start: 1;
     color: #f1f1f1;
-    position: absolute;
     text-align: center;             
     background: rgba(0, 0, 0, 0.30);
 }
 
 .griditem-mod-content-desc {
-    width: 100%;
-    height: 100px;
+    align-self: end;
+    grid-row-start: 3;
     font-size: 12px;
     color: #f1f1f1;
     bottom:0px;
-    position: absolute;
-    text-align: center;   
+    text-align: center;
     background: rgba(0, 0, 0, 0.30);
 }
