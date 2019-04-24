@@ -263,9 +263,8 @@ div.menu-outer li a:hover:not(.active) {
     height: 338px;
 }
 
-/* Noke it from orbit */
+/* Nuke it from orbit */
 .griditem-mod > img {
-    visibility: hidden;
     display: none;
 }
 
