@@ -236,3 +236,41 @@ div.menu-outer li a:hover:not(.active) {
     margin-left: auto;
     margin-right: auto;
 }
+
+.mod-container {
+    display: grid;
+    grid-row-gap: 25px;
+    grid-column-gap: 25px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 50px;
+    text-align: center;
+}
+
+.griditem-mod {
+    position: absolute;
+    max-width: 100%;
+    width: auto;
+}
+
+.griditem-mod-content-name {
+    top:0px;
+    width: 100%;
+    height: 50px;
+    font-size:16px;
+    color: #f1f1f1;
+    position: absolute;
+    text-align: center;             
+    background: rgba(0, 0, 0, 0.30);
+}
+
+.griditem-mod-content-desc {
+    width: 100%;
+    height: 100px;
+    font-size: 12px;
+    color: #f1f1f1;
+    bottom:0px;
+    position: absolute;
+    text-align: center;   
+    background: rgba(0, 0, 0, 0.30);
+}
