@@ -90,6 +90,10 @@ a:hover{
 	background-size: 35px;
 }
 
+.logo a:hover {
+	text-decoration-style: dotted;
+}
+
 .page-header {
     color:#fff;
     text-align:center;
