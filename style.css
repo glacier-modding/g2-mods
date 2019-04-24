@@ -272,7 +272,9 @@ div.menu-outer li a:hover:not(.active) {
 .griditem-mod-content-name {
     grid-row-start: 1;
     color: #f1f1f1;
-    text-align: center;             
+    height:50px;
+    line-height: 15px;
+    text-align: center;
     background: rgba(0, 0, 0, 0.30);
 }
 
