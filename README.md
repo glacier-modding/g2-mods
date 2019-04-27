@@ -4,10 +4,9 @@ A work in progress website dedicated to hosting/documenting modifications for Gl
 
 I may hit points of procrasination during building the website. However, bare with me on our journey to success.
 
-##Glacier² Engine Games
-The current list of 
-- HITMAN
+## Glacier² Engine Games
 - HITMAN 2
+- HITMAN
 - Deus Ex: Mankind Divided
 - Hitman: Absolution
 
