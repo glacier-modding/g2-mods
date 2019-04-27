@@ -115,6 +115,7 @@ a:hover{
 /* Navigation menu up top of page below header */
 div.menu-outer {
 	padding-left: 275px;
+	border-bottom: 2px solid #05be99;
 }
 
 div.menu-outer ul {
@@ -234,13 +235,14 @@ div.menu-outer li a:hover:not(.active) {
     margin-top:2rem;
     margin-bottom:1rem;
     font-weight:normal;
-    color:#159957
+    color:#159957;
 }
 .main-content p{
     margin-bottom:1em
 }
 .footer-content{
     background-color: #1f2125;
+    border-top: 2px solid #05be99;
     font-size:13px;
     padding: 15px;
     text-align: center;
