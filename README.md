@@ -13,9 +13,12 @@ I've started work on this website but may hit points of procrasination during bu
 Bare with me on our journey to success.
 
 ## TODO: 
-- Merge index.html with mods/mods.html
-- Fixup the grid
-- Start building out pages for each game
-- Start adding a few mods
-- Talk to Mike about intergration with a Mod Manager
+- Add a how to submit a mod page.
+	- Figure out how exactly that is going to work, would be great to have mods submitted as github pull requests.
+	- Run into an issue with loooooong static pages, possibly may need a backend :(
+	
+- Start adding a few trivial mod to start things off.
+- Talk to Mike about a Mod Manager
+	- Distrobution of mods should be done via Zip files, with a json / xml manifest, swixel has concept for something like this.
+- Talk Swixel into helping out Mike
 - Talk to B3 about Mods in general
