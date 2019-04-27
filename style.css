@@ -3,24 +3,10 @@ html{
 	lang="en"
     font-family:sans-serif;
     -ms-text-size-adjust:100%;
-    -webkit-text-size-adjust:100%
+    -webkit-text-size-adjust:100%;
+    background-color:#1f2125;
 }
-body{
-    margin:0
-}
-a{
-    background-color:transparent
-}
-a:active,a:hover{
-    outline:0
-}
-h1{
-    font-size:2em;
-    margin:0.67em 0
-}
-*{
-    box-sizing:border-box
-}
+
 body{
     padding:0;
     margin:0;
@@ -29,13 +15,33 @@ body{
     line-height:1.5;
     color:#606c71
 }
+
+a{
+    background-color:transparent
+}
+
+a:active,a:hover{
+    outline:0
+}
+
+h1{
+    font-size:2em;
+    margin:0.67em 0
+}
+
+*{
+    box-sizing:border-box
+}
+
 a{
     color:#1e6bb8;
     text-decoration:none
 }
+
 a:hover{
     text-decoration:underline
 }
+
 .btn{
     display:inline-block;
     margin-bottom:1rem;
@@ -47,23 +53,27 @@ a:hover{
     border-radius:0.3rem;
     transition:color 0.2s, background-color 0.2s, border-color 0.2s
 }
+
 .btn:hover{
     color:rgba(255,255,255,0.8);
     text-decoration:none;
     background-color:rgba(255,255,255,0.2);
     border-color:rgba(255,255,255,0.3)
 }
+
 @media screen and (min-width: 64em){
     .btn{
         padding:0.75rem 1rem
     }
 }
+
 @media screen and (min-width: 42em) and (max-width: 64em){
     .btn{
         padding:0.6rem 0.9rem;
         font-size:0.9rem
     }
 }
+
 @media screen and (max-width: 42em){
     .btn{
         display:block;
@@ -75,8 +85,9 @@ a:hover{
 
 /* Top left Logo / Home Button */
 .logo {
+	position: absolute;
 	background-color: #1f2125;
-	padding-left:12px
+	padding-left:12px;
 }
 
 .logo a {
@@ -97,11 +108,15 @@ a:hover{
 .page-header {
     color:#fff;
     text-align:center;
-    background-color:#159957;
-    background-image:linear-gradient(120deg, #155799, #159957)
+    background-color:#272A2F;
+    /*background-image:linear-gradient(120deg, #272A2F, #159957);*/
 }
 
 /* Navigation menu up top of page below header */
+div.menu-outer {
+	padding-left: 275px;
+}
+
 div.menu-outer ul {
   list-style-type: none;
   margin: 0;
@@ -112,7 +127,6 @@ div.menu-outer ul {
 
 div.menu-outer li {
   float: left;
-  border-right:1px solid #bbb;
 }
 
 div.menu-outer li:last-child {
@@ -128,7 +142,7 @@ div.menu-outer li a {
 }
 
 div.menu-outer li a:hover:not(.active) {
-  background-color: #111;
+  background-color: #111111;
 }
 
 .active {
