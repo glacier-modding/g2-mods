@@ -21,7 +21,7 @@ Bare with me on our journey to success.
 - Start adding a few trivial mods to start things off.
 
 - Talk to Mike about a Mod Manager
-	- Distrobution of mods should be done via Zip files, with a json / xml manifest, swixel has concept for something like this.
+	- Distrobution of mods should be done via Zip files, with a json / xml manifest, so a mod manager can manage multiple mods. 	    - Swixel has concept for something like this.
 
 - Talk Swixel into helping out Mike
 
