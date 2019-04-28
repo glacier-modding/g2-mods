@@ -204,7 +204,8 @@ div.menu-outer li a:hover:not(.active) {
 }
 
 .griditem-game a {
-	bottom: 250px;
+	position: relative;
+	bottom: 50%;
 	line-height: 0;
 }
 
