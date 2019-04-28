@@ -39,7 +39,7 @@ a:hover {
     text-decoration:underline
 }
 
-.btn{
+.btn {
     display:inline-block;
     margin-bottom:1rem;
     color:rgba(255,255,255,0.7);
@@ -187,7 +187,7 @@ div.menu-outer li a:hover:not(.active) {
   background-color: #4CAF50;
 }
 
-/* Grid Shit */
+/* Game Grid */
 .game-container {
 	display: grid;
 	grid-row-gap: 25px;
@@ -204,7 +204,6 @@ div.menu-outer li a:hover:not(.active) {
 }
 
 .griditem-game a {
-	position: relative;
 	bottom: 250px;
 	line-height: 0;
 }
