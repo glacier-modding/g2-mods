@@ -115,7 +115,7 @@ div.menu-outer {
 	border-bottom: 2px solid #05be99;
 }
 
-div.menu-outer ul {
+/*div.menu-outer ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -141,6 +141,46 @@ div.menu-outer li a {
 
 div.menu-outer li a:hover:not(.active) {
   background-color: #111111;
+}*/
+
+.dropbtn {
+	background-color: #1f2125;
+	color: #05be99;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #1f2125;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: #05be99;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {background-color: #111111}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover .dropbtn {
+	background-color: #111111;
 }
 
 .active {
