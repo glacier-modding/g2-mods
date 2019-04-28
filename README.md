@@ -2,7 +2,7 @@
 
 A work in progress website dedicated to hosting/documenting modifications for Glacier² Engine games. I've started work buidling this website, actively avoiding building a backend & using scripts as much as possible, simply because of my disliking of the bloated nature of them.
 
-I may hit points of procrasination during building the website. However, bare with me on our journey to success.
+May hit points of procrasination during building the website. However, bare with us on our journey to success.
 
 ## Glacier² Engine Games
 - HITMAN 2
