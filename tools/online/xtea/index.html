@@ -25,6 +25,16 @@
                 background: #cfffff;
             }
 
+            #naming {
+                visibility: hidden;
+                display: block;
+                position: absolute;
+                top: 15;
+                right: 15px;
+                border: 1px solid black;
+                background: #3ccccc;
+            }
+
             #wrapper {
                 margin: 0;
                 padding: 0;
@@ -47,6 +57,10 @@
 	<body>
         <div id="save" onclick="saveFile(event);">
             Save File
+        </div>
+
+        <div id="naming">
+            <input type="text" id="naming-field">
         </div>
 
         <div id ="wrapper">
@@ -159,6 +173,12 @@
                 }());
 
                 let fileName = "compiled";
+
+                try {
+                    fileName = document.getElementById("naming-field").value;
+                } catch (e) {
+                    /* alert(e); */
+                }
                 let data = compileOutput();
 
                 saveData(data, fileName);
@@ -231,7 +251,9 @@
 
                     for (let i = 0; i < ev.dataTransfer.items.length; i++) {
                         if (ev.dataTransfer.items[i].kind === 'file') {
-                            attemptDecipher(ev.dataTransfer.items[i].getAsFile());
+                            let file = ev.dataTransfer.items[i].getAsFile()
+                            document.getElementById("naming-field").value = file.name;
+                            attemptDecipher(file);
                             break;
                         }
                     }
@@ -240,7 +262,10 @@
                         alert("Only one file is allowed");
                         return;
                     }
-                    attemptDecipher(ev.dataTransfer.items[i].getAsFile());
+                    let file = ev.dataTransfer.items[i].getAsFile();
+                    console.log(file);
+                    document.getElementById("naming-field").value = file.name;
+                    attemptDecipher(file);
                 }
             }
 
