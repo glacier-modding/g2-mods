@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+        <title>Package Definitions anyone?</title>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+            
+            #save {
+                /*visibility: hidden;*/
+                display: block;
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                padding: 5px;
+                border: 1px solid black;
+                background: #cccccc;
+                cursor: pointer;
+            }
+
+            #save:hover {
+                background: #cfffff;
+            }
+
+            #wrapper {
+                margin: 0;
+                padding: 0;
+                display: block;
+                position: absolute;
+                top: 50px;
+                left: 15px;
+                bottom: 15px;
+                right: 15px;
+            }
+            #packagedefinitions {
+                margin: 0;
+                padding: 0;
+                border-top: 1pt solid black;
+                width: 100%;
+                height: 100%;                
+            }
+        </style>
+	</head>
+	<body>
+        <div id="save" onclick="saveFile(event);">
+            Save File
+        </div>
+
+        <div id ="wrapper">
+            <textarea id="packagedefinitions" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+            </textarea>
+        </div>
+        
+        <script src='./hitwasm/packagedefinition.js'></script>
+		<script>
+
+            // Thumbs and PackageDefinitions Header
+            const HEADER = [
+                0x22, 0x3D, 0x6F, 0x9A,
+                0xB3, 0xF8, 0xFE, 0xB6,
+	            0x61, 0xD9, 0xCC, 0x1C,
+                0x62, 0xDE, 0x83, 0x41
+            ];
+
+            // CRC block follows, which complicates re-encoding as browsers lack it,
+            // *URGH*.  Hulk smash.
+
+            // Key
+            const XTEA_KEY = new Uint32Array([
+                0x30F95282,
+                0x1F48C419,
+                0x295F8548,
+                0x2A78366D
+            ]);
+
+            // Delta
+            const XTEA_DELTA = 0x61C88647;
+
+            // Rounds
+            const XTEA_ROUNDS = 32;
+
+            function markFailure() {
+                disable();                
+                alert("Invalid input");
+            }
+
+            function disable() {
+                let target = document.getElementById('packagedefinitions');
+                target.value = "Drag and drop packagedefinitions.txt here.";
+                target.readOnly  = true;
+            }
+
+            function enable() {
+                document.getElementById('packagedefinitions').readOnly = false;
+                document.getElementById('save').style.visibility = 'visible';
+            }
+
+            function compileOutput() {
+                let target = document.getElementById('packagedefinitions');
+                let raw = new TextEncoder("utf-8").encode(target.value);
+                console.log(raw);
+
+                if(raw.length % 8 != 0) {
+                    let zeroes = 8 - (raw.length % 8);
+                    let new_length = raw.length + zeroes;
+                    let new_buffer = new Uint8Array(new_length);
+                    new_buffer.set(raw);
+                    for(let i = 0; i < zeroes; i++) {
+                        new_buffer[raw.length + i] = 0;
+                    }
+                    raw = new_buffer;
+                }
+
+                console.log(raw);
+                
+                raw = wasm_encipher(
+                    raw,
+                    XTEA_DELTA,
+                    XTEA_ROUNDS,
+                    XTEA_KEY,
+                );
+
+
+                //crc32(initial: u32, buf: &[u8], pos: usize) -> u32
+                let crc = wasm_crc32_final(wasm_crc32(0, raw, 0));
+
+                let buffer = new Uint8Array(raw.length + 20);
+                buffer.set(raw, 20);
+                for(let i = 0; i < 16; i++) {
+                    buffer[i] = HEADER[i];
+                }
+
+                buffer[16] = crc & 0xFF;
+                buffer[17] = (crc >> 8) & 0xFF;
+                buffer[18] = (crc >> 16) & 0xFF;
+                buffer[19] = (crc >> 24) & 0xFF;
+
+                return buffer;
+            }
+
+            function saveFile(event) {
+                // Build the internal data
+                var saveData = (function () {
+                    var a = document.createElement("a");
+                    document.body.appendChild(a);
+                    a.style = "display: none";
+                    return function (data, fileName) {
+                        var json = JSON.stringify(data),
+                            blob = new Blob([data], {type: "application/octet-stream"}),
+                            url = window.URL.createObjectURL(blob);
+                        a.href = url;
+                        a.download = fileName;
+                        a.click();
+                        window.URL.revokeObjectURL(url);
+                    };
+                }());
+
+                let fileName = "compiled";
+                let data = compileOutput();
+
+                saveData(data, fileName);
+            }
+
+            function decipher(buffer) {
+                console.log(buffer);
+
+                // Let the XTEA handler do the work.
+                let new_buffer = wasm_decipher(
+                    buffer,
+                    XTEA_DELTA,
+                    XTEA_ROUNDS,
+                    XTEA_KEY,
+                );
+
+                console.log(new_buffer);
+
+                {
+                    let j = new_buffer.length-1;
+                    for(; j > 0;) {
+                        if(new_buffer[j] != 0) {
+                            break;
+                        }
+                        j--;
+                    }
+                    new_buffer = new_buffer.slice(0, j);
+                }
+
+                // Made it that far, presumably we're good?
+                enable();
+                document.getElementById('packagedefinitions').value =
+                    new TextDecoder('utf-8').decode(new_buffer);
+            }
+
+            function attemptDecipher(file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    try {
+                        // Skip 20 bytes (16 byte header, 4 bytes CRC32)
+                        // TODO: Header and CRC32 check.
+                        let buffer = new Uint8Array(event.target.result).slice(20);
+                        decipher(buffer);
+                    } catch (e) {
+                        console.log(e);
+                        markFailure();
+                    }
+                };
+                reader.onerror = e => rej('error while reading');
+                reader.readAsArrayBuffer(file);
+            }
+
+            function dropHandler(ev) {
+                /* Block page change */
+                ev.preventDefault();
+
+                /* Decipher */
+                if (ev.dataTransfer.items) {
+                    let fileCount = 0;
+                    for (let i = 0; i < ev.dataTransfer.items.length; i++) {
+                        if (ev.dataTransfer.items[i].kind === 'file') {
+                            fileCount += 1;
+                        }
+                    }
+
+                    if(fileCount > 1) {
+                        alert("Only one file is allowed");
+                        return;
+                    }
+
+                    for (let i = 0; i < ev.dataTransfer.items.length; i++) {
+                        if (ev.dataTransfer.items[i].kind === 'file') {
+                            attemptDecipher(ev.dataTransfer.items[i].getAsFile());
+                            break;
+                        }
+                    }
+                } else {
+                    if(ev.dataTransfer.files.length > 1) {
+                        alert("Only one file is allowed");
+                        return;
+                    }
+                    attemptDecipher(ev.dataTransfer.items[i].getAsFile());
+                }
+            }
+
+            
+            function dragOverHandler(ev) {
+                /* Prevent the browser doing anything insane. */
+                ev.preventDefault();
+            }
+
+            wasm_encipher = 0;
+            wasm_decipher = 0;
+            wasm_crc32 = 0;
+            wasm_crc32_final = 0;
+
+            document.addEventListener("DOMContentLoaded", function(event) { 
+                disable();
+            });
+        </script>
+        <script type="module">
+            /* Pull WASM */
+            const { encipher, decipher, crc32, crc_final } = wasm_bindgen;
+            async function run() {
+            await wasm_bindgen('./hitwasm/packagedefinition_bg.wasm');
+                wasm_encipher = encipher;
+                wasm_decipher = decipher;
+                wasm_crc32 = crc32;
+                wasm_crc32_final = crc_final;
+            }
+            run();
+        </script>
+	</body>
+</html>
