@@ -198,9 +198,15 @@ div.menu-outer li a:hover:not(.active) {
 	text-align: center;
 }
 
-.griditem-img img {
+.griditem-game img {
 	max-width:100%;
     width: auto;
+}
+
+.griditem-game a {
+	position: relative;
+	bottom: 250px;
+	line-height: 0;
 }
 
 .project-name {
