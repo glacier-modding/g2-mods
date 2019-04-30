@@ -125,7 +125,9 @@
             function compileOutput() {
                 let target = document.getElementById('packagedefinitions');
                 let raw = new TextEncoder("utf-8").encode(target.value);
-                console.log(raw);
+
+                // This goes here.
+                let crc = wasm_crc32(0, raw);
 
                 if(raw.length % 8 != 0) {
                     let zeroes = 8 - (raw.length % 8);
@@ -138,18 +140,12 @@
                     raw = new_buffer;
                 }
 
-                console.log(raw);
-                
                 raw = wasm_encipher(
                     raw,
                     XTEA_DELTA,
                     XTEA_ROUNDS,
                     XTEA_KEY,
                 );
-
-
-                //crc32(initial: u32, buf: &[u8], pos: usize) -> u32
-                let crc = wasm_crc32_final(wasm_crc32(0, raw, 0));
 
                 let buffer = new Uint8Array(raw.length + 20);
                 buffer.set(raw, 20);
@@ -195,8 +191,6 @@
             }
 
             function decipher(buffer) {
-                console.log(buffer);
-
                 // Let the XTEA handler do the work.
                 let new_buffer = wasm_decipher(
                     buffer,
@@ -205,12 +199,11 @@
                     XTEA_KEY,
                 );
 
-                console.log(new_buffer);
-
                 {
                     let j = new_buffer.length-1;
                     for(; j > 0;) {
                         if(new_buffer[j] != 0) {
+                            j++;
                             break;
                         }
                         j--;
@@ -273,7 +266,6 @@
                         return;
                     }
                     let file = ev.dataTransfer.items[i].getAsFile();
-                    console.log(file);
                     document.getElementById("naming-field").value = file.name;
                     attemptDecipher(file);
                 }
@@ -288,7 +280,6 @@
             wasm_encipher = 0;
             wasm_decipher = 0;
             wasm_crc32 = 0;
-            wasm_crc32_final = 0;
 
             document.addEventListener("DOMContentLoaded", function(event) { 
                 disable();
@@ -296,13 +287,12 @@
         </script>
         <script type="module">
             /* Pull WASM */
-            const { encipher, decipher, crc32, crc_final } = wasm_bindgen;
+            const { encipher, decipher, crc32 } = wasm_bindgen;
             async function run() {
             await wasm_bindgen('./hitwasm/packagedefinition_bg.wasm');
                 wasm_encipher = encipher;
                 wasm_decipher = decipher;
                 wasm_crc32 = crc32;
-                wasm_crc32_final = crc_final;
             }
             run();
         </script>

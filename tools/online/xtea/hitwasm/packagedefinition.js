@@ -99,29 +99,19 @@
     * Initiailise, or continue, a crc32 calculation.
     * @param {number} initial
     * @param {Uint8Array} buf
-    * @param {number} pos
     * @returns {number}
     */
-    __exports.crc32 = function(initial, buf, pos) {
+    __exports.crc32 = function(initial, buf) {
         const ptr1 = passArray8ToWasm(buf);
         const len1 = WASM_VECTOR_LEN;
         try {
-            return wasm.crc32(initial, ptr1, len1, pos) >>> 0;
+            return wasm.crc32(initial, ptr1, len1) >>> 0;
 
         } finally {
             wasm.__wbindgen_free(ptr1, len1 * 1);
 
         }
 
-    };
-
-    /**
-    * Finalise a CRC32 calculation.
-    * @param {number} initial
-    * @returns {number}
-    */
-    __exports.crc_final = function(initial) {
-        return wasm.crc_final(initial) >>> 0;
     };
 
     const heap = new Array(32);
