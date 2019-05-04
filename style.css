@@ -203,6 +203,10 @@ div.menu-outer li a:hover:not(.active) {
     width: auto;
 }
 
+.griditem-game img:hover {
+	-webkit-filter: brightness(50%);
+}
+
 .griditem-game a {
 	position: relative;
 	bottom: 50%;
