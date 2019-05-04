@@ -209,7 +209,7 @@ div.menu-outer li a:hover:not(.active) {
 	line-height: 0;
 }
 
-.griditem-game a {
+.griditem-game a:hover {
 	border: 1px solid green ;
 }
 
