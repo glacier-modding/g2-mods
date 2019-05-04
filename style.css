@@ -305,9 +305,7 @@ div.menu-outer li a:hover:not(.active) {
 }
 
 .griditem-game a:hover {
-	border: Glacier solid;
-	border-color: Glacier;
-	border-width: 10px;
+	border: 10px solid Glacier;
 	padding: 25px;
 }
 
