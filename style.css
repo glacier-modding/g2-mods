@@ -22,21 +22,21 @@ a {
     text-decoration:none;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 a:active,a:hover {
-    outline:0
+    outline: 0;
 }
 
 h1 {
-    font-size:2em;
-    margin:0.67em 0
+    font-size: 2em;
+    margin: 0.67em 0
 }
 
 * {
-    box-sizing:border-box
-}
-
-a:hover {
-    text-decoration:underline
+    box-sizing: border-box
 }
 
 .btn {
@@ -207,6 +207,10 @@ div.menu-outer li a:hover:not(.active) {
 	position: relative;
 	bottom: 50%;
 	line-height: 0;
+}
+
+.griditem-game a {
+	border: 1px solid green ;
 }
 
 .project-name {
