@@ -187,39 +187,6 @@ div.menu-outer li a:hover:not(.active) {
   background-color: #4CAF50;
 }
 
-/* Game Grid */
-.game-container {
-	display: grid;
-	grid-row-gap: 25px;
-	grid-column-gap: 25px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-	margin: 50px;
-	text-align: center;
-}
-
-.griditem-game img {
-	max-width:100%;
-    width: auto;
-}
-
-.griditem-game img:hover {
-	-webkit-filter: brightness(50%);
-}
-
-.griditem-game a {
-	position: relative;
-	bottom: 50%;
-	line-height: 0;
-}
-
-.griditem-game a:hover {
-	border: solid;
-	border-width: 20px;
-	border-color: green;
-	padding: 25px;
-}
-
 .project-name {
     margin-top:0;
     margin-bottom:0.1rem
@@ -307,6 +274,39 @@ div.menu-outer li a:hover:not(.active) {
 
 .main-content p {
     margin-bottom:1em
+}
+
+/* Game Grid */
+.game-container {
+	display: grid;
+	grid-row-gap: 25px;
+	grid-column-gap: 25px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+	margin: 50px;
+	text-align: center;
+}
+
+.griditem-game img {
+	max-width:100%;
+    width: auto;
+}
+
+.griditem-game img:hover {
+	-webkit-filter: brightness(50%);
+}
+
+.griditem-game a {
+	position: relative;
+	bottom: 50%;
+	line-height: 0;
+}
+
+.griditem-game a:hover {
+	border: solid;
+	border-width: 20px;
+	border-color: #08ac8c;
+	padding: 25px;
 }
 
 .footer-content {
