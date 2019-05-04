@@ -301,7 +301,7 @@ div.menu-outer li a:hover:not(.active) {
 	bottom: 50%;
 	line-height: 0;
 	font-size: 2em;
-	font-color: grey;
+	color: grey;
 }
 
 .griditem-game a:hover {
