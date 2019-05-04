@@ -301,12 +301,13 @@ div.menu-outer li a:hover:not(.active) {
 	bottom: 50%;
 	line-height: 0;
 	font-size: 2em;
+	font-color: grey;
 }
 
 .griditem-game a:hover {
 	border: solid;
 	border-width: 10px;
-	border-color: #08ac8c;
+	border-color: Glacier;
 	padding: 25px;
 }
 
