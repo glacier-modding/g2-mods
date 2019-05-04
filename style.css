@@ -212,7 +212,7 @@ div.menu-outer li a:hover:not(.active) {
 .griditem-game a:hover {
 	border: solid;
 	border-width: 20px
-	background-color: green;
+	border-color: green;
 	padding: 25px;
 }
 
