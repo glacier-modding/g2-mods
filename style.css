@@ -109,6 +109,17 @@ h1 {
     /*background-image:linear-gradient(120deg, #272A2F, #159957);*/
 }
 
+.discord{
+    position: absolute;
+    background-image: url("/images/discord.svg");
+    background-repeat: no-repeat;
+    max-width: 150px;
+    height: 100%;
+    width: 100%;
+    right: 5px;
+    z-index: 1;
+}
+
 /* Navigation menu up top of page below header */
 div.menu-outer {
 	padding-left: 275px;
