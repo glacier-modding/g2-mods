@@ -80,11 +80,6 @@ h1 {
     }
 }
 
-/* Preload images */
-div#preload {
-	display: none;
-}
-
 /* Top left Logo / Home Button */
 .logo {
 	position: absolute;
