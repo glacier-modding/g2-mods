@@ -98,10 +98,17 @@ h1 {
 	background-size: 35px;
 }
 
+.logo svg {
+	position: relative;
+}
+
+.logo svg g:hover {
+	fill: #0AD4AD;
+}
+
 .logo a:hover {
 	text-decoration-style: dotted;
 	color: #0AD4AD;
-	background-image: url("images/g2logo_hover.svg");
 }
 
 .page-header {
@@ -121,10 +128,6 @@ h1 {
     width: 100%;
     right: 5px;
     z-index: 1;
-}
-
-.discord:hover {
-	background-image: url("/images/discord_hover.svg");
 }
 
 /* Navigation menu up top of page below header */
