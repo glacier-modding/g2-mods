@@ -98,14 +98,6 @@ h1 {
 	background-size: 35px;
 }
 
-.logo svg {
-	position: relative;
-}
-
-.logo svg g:hover {
-	fill: #0AD4AD;
-}
-
 .logo a:hover {
 	text-decoration-style: dotted;
 	color: #0AD4AD;
