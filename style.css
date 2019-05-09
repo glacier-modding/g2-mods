@@ -101,10 +101,7 @@ h1 {
 .logo a:hover {
 	text-decoration-style: dotted;
 	color: #0AD4AD;
-}
-
-.logo a:hover svg #logofill {
-  fill: #05be99;
+	fill: #0AD4AD;
 }
 
 .page-header {
