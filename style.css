@@ -100,6 +100,7 @@ h1 {
 
 .logo a:hover {
 	text-decoration-style: dotted;
+	color: #0AD4AD;
 	background-image: url("images/g2logo_hover.svg");
 }
 
