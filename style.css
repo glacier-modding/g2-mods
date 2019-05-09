@@ -103,6 +103,10 @@ h1 {
 	color: #0AD4AD;
 }
 
+.logo a:hover svg #logofill {
+  fill: #05be99;
+}
+
 .page-header {
     color:#fff;
     text-align:center;
