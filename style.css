@@ -123,9 +123,9 @@ h1 {
     z-index: 1;
 }
 
-/*.discord:hover{
+.discord:hover {
 	background-image: url("/images/discord_hover.svg");
-}*/
+}
 
 /* Navigation menu up top of page below header */
 div.menu-outer {
