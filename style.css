@@ -276,6 +276,7 @@ div.menu-outer {
 }
 
 .griditem-game img {
+	-webkit-filter: brightness(12%);
 	max-width: 100%;
 	width: auto;
 }
