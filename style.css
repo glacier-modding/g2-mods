@@ -289,11 +289,11 @@ div.menu-outer {
 	bottom: 50%;
 	line-height: 0;
 	font-size: 2em;
-	color: grey;
+	color: white;
 }
 
 .griditem-game a:hover {
-	border: 10px solid Blue;
+	border: 10px solid white;
 	padding: 25px;
 }
 
