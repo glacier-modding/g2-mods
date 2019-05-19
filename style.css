@@ -83,25 +83,22 @@ h1 {
 /* Top left Logo / Home Button */
 .logo {
 	position: absolute;
-	background-color: #1f2125;
-	padding-left: 12px;
+	margin-left: 1%;
+}
+
+.logo img {
+	width:35px;
+	height:35px;
+	float: left;
+	margin-top: 3%;
+	margin-left: -2%;
 }
 
 .logo a {
-	background-image: url('images/g2logo.svg');
-	background-position: left;
-	background-repeat: no-repeat;
-	padding-left: 45px;
-	display: block;
-	color: #08ac8c;
-	font-size: 2em;
-	background-size: 35px;
-}
-
-.logo a:hover {
-	text-decoration-style: dotted;
-	color: #0AD4AD;
-	fill: #0AD4AD;
+    display: block;
+    color: #08ac8c;
+    font-size: 2em;
+	float: right;
 }
 
 .page-header {
