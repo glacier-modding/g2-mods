@@ -296,6 +296,7 @@ div.menu-outer {
 .griditem-game a:hover {
 	border: 10px solid white;
 	padding: 25px;
+	text-decoration-line: none;
 }
 
 .footer-content {
