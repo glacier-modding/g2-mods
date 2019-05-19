@@ -101,6 +101,12 @@ h1 {
 	float: right;
 }
 
+.logo a:hover {
+	text-decoration-line: none;
+	color: #0AD4AD;
+	fill: #0AD4AD;
+}
+
 .page-header {
 	color: #fff;
 	text-align: center;
