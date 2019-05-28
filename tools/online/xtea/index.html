@@ -78,7 +78,7 @@
             </textarea>
         </div>
         
-        <script src='./hitwasm/packagedefinition.js'></script>
+        <script src='./hitwasm/hitwasm_xtea.js'></script>
 		<script>
 
             // Thumbs and PackageDefinitions Header
@@ -289,7 +289,7 @@
             /* Pull WASM */
             const { encipher, decipher, crc32 } = wasm_bindgen;
             async function run() {
-            await wasm_bindgen('./hitwasm/packagedefinition_bg.wasm');
+            await wasm_bindgen('./hitwasm/hitwasm_xtea_bg.wasm');
                 wasm_encipher = encipher;
                 wasm_decipher = decipher;
                 wasm_crc32 = crc32;

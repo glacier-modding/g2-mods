@@ -114,25 +114,10 @@
 
     };
 
-    const heap = new Array(32);
-
-    heap.fill(undefined);
-
-    heap.push(undefined, null, true, false);
-
-    let heap_next = heap.length;
-
-    function dropObject(idx) {
-        if (idx < 36) return;
-        heap[idx] = heap_next;
-        heap_next = idx;
-    }
-
-    __exports.__wbindgen_object_drop_ref = function(i) { dropObject(i); };
-
     function init(module) {
         let result;
-        const imports = { './packagedefinition': __exports };
+        const imports = { './hitwasm_xtea': __exports };
+
         if (module instanceof URL || typeof module === 'string' || module instanceof Request) {
 
             const response = fetch(module);
