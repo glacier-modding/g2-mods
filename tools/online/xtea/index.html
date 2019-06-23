@@ -78,7 +78,7 @@
             </textarea>
         </div>
         
-        <script src='./hitwasm/packagedefinition.js'></script>
+        <script src='./hitwasm/hitwasm_xtea.js'></script>
 		<script>
 
             // Thumbs and PackageDefinitions Header
@@ -88,9 +88,6 @@
 	            0x61, 0xD9, 0xCC, 0x1C,
                 0x62, 0xDE, 0x83, 0x41
             ];
-
-            // CRC block follows, which complicates re-encoding as browsers lack it,
-            // *URGH*.  Hulk smash.
 
             // Key
             const XTEA_KEY = new Uint32Array([
@@ -125,40 +122,13 @@
             function compileOutput() {
                 let target = document.getElementById('packagedefinitions');
                 let raw = new TextEncoder("utf-8").encode(target.value);
-
-                // This goes here.
-                let crc = wasm_crc32(0, raw);
-
-                if(raw.length % 8 != 0) {
-                    let zeroes = 8 - (raw.length % 8);
-                    let new_length = raw.length + zeroes;
-                    let new_buffer = new Uint8Array(new_length);
-                    new_buffer.set(raw);
-                    for(let i = 0; i < zeroes; i++) {
-                        new_buffer[raw.length + i] = 0;
-                    }
-                    raw = new_buffer;
-                }
-
-                raw = wasm_encipher(
+                return wasm_encipher(
                     raw,
                     XTEA_DELTA,
+                    HEADER,
                     XTEA_ROUNDS,
                     XTEA_KEY,
                 );
-
-                let buffer = new Uint8Array(raw.length + 20);
-                buffer.set(raw, 20);
-                for(let i = 0; i < 16; i++) {
-                    buffer[i] = HEADER[i];
-                }
-
-                buffer[16] = crc & 0xFF;
-                buffer[17] = (crc >> 8) & 0xFF;
-                buffer[18] = (crc >> 16) & 0xFF;
-                buffer[19] = (crc >> 24) & 0xFF;
-
-                return buffer;
             }
 
             function saveFile(event) {
@@ -195,23 +165,10 @@
                 let new_buffer = wasm_decipher(
                     buffer,
                     XTEA_DELTA,
+                    HEADER,
                     XTEA_ROUNDS,
                     XTEA_KEY,
                 );
-
-                {
-                    let j = new_buffer.length-1;
-                    for(; j > 0;) {
-                        if(new_buffer[j] != 0) {
-                            j++;
-                            break;
-                        }
-                        j--;
-                    }
-                    new_buffer = new_buffer.slice(0, j);
-                }
-
-                // Made it that far, presumably we're good?
                 enable();
                 document.getElementById('packagedefinitions').value =
                     new TextDecoder('utf-8').decode(new_buffer);
@@ -221,9 +178,7 @@
                 const reader = new FileReader();
                 reader.onload = (event) => {
                     try {
-                        // Skip 20 bytes (16 byte header, 4 bytes CRC32)
-                        // TODO: Header and CRC32 check.
-                        let buffer = new Uint8Array(event.target.result).slice(20);
+                        let buffer = new Uint8Array(event.target.result);
                         decipher(buffer);
                     } catch (e) {
                         console.log(e);
@@ -279,8 +234,6 @@
 
             wasm_encipher = 0;
             wasm_decipher = 0;
-            wasm_crc32 = 0;
-
             document.addEventListener("DOMContentLoaded", function(event) { 
                 disable();
             });
@@ -289,10 +242,9 @@
             /* Pull WASM */
             const { encipher, decipher, crc32 } = wasm_bindgen;
             async function run() {
-            await wasm_bindgen('./hitwasm/packagedefinition_bg.wasm');
+            await wasm_bindgen('./hitwasm/hitwasm_xtea_bg.wasm');
                 wasm_encipher = encipher;
                 wasm_decipher = decipher;
-                wasm_crc32 = crc32;
             }
             run();
         </script>

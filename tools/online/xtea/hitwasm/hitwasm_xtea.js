@@ -49,17 +49,20 @@
     * Enciphers the buffer.
     * @param {Uint8Array} data
     * @param {number} delta
+    * @param {Uint8Array} header
     * @param {number} rounds
     * @param {Uint32Array} key
     * @returns {Uint8Array}
     */
-    __exports.encipher = function(data, delta, rounds, key) {
+    __exports.encipher = function(data, delta, header, rounds, key) {
         const ptr0 = passArray8ToWasm(data);
         const len0 = WASM_VECTOR_LEN;
-        const ptr3 = passArray32ToWasm(key);
-        const len3 = WASM_VECTOR_LEN;
+        const ptr2 = passArray8ToWasm(header);
+        const len2 = WASM_VECTOR_LEN;
+        const ptr4 = passArray32ToWasm(key);
+        const len4 = WASM_VECTOR_LEN;
         const retptr = globalArgumentPtr();
-        wasm.encipher(retptr, ptr0, len0, delta, rounds, ptr3, len3);
+        wasm.encipher(retptr, ptr0, len0, delta, ptr2, len2, rounds, ptr4, len4);
         const mem = getUint32Memory();
         const rustptr = mem[retptr / 4];
         const rustlen = mem[retptr / 4 + 1];
@@ -74,17 +77,20 @@
     * Decipherd the buffer.
     * @param {Uint8Array} data
     * @param {number} delta
+    * @param {Uint8Array} header
     * @param {number} rounds
     * @param {Uint32Array} key
     * @returns {Uint8Array}
     */
-    __exports.decipher = function(data, delta, rounds, key) {
+    __exports.decipher = function(data, delta, header, rounds, key) {
         const ptr0 = passArray8ToWasm(data);
         const len0 = WASM_VECTOR_LEN;
-        const ptr3 = passArray32ToWasm(key);
-        const len3 = WASM_VECTOR_LEN;
+        const ptr2 = passArray8ToWasm(header);
+        const len2 = WASM_VECTOR_LEN;
+        const ptr4 = passArray32ToWasm(key);
+        const len4 = WASM_VECTOR_LEN;
         const retptr = globalArgumentPtr();
-        wasm.decipher(retptr, ptr0, len0, delta, rounds, ptr3, len3);
+        wasm.decipher(retptr, ptr0, len0, delta, ptr2, len2, rounds, ptr4, len4);
         const mem = getUint32Memory();
         const rustptr = mem[retptr / 4];
         const rustlen = mem[retptr / 4 + 1];
@@ -95,44 +101,10 @@
 
     };
 
-    /**
-    * Initiailise, or continue, a crc32 calculation.
-    * @param {number} initial
-    * @param {Uint8Array} buf
-    * @returns {number}
-    */
-    __exports.crc32 = function(initial, buf) {
-        const ptr1 = passArray8ToWasm(buf);
-        const len1 = WASM_VECTOR_LEN;
-        try {
-            return wasm.crc32(initial, ptr1, len1) >>> 0;
-
-        } finally {
-            wasm.__wbindgen_free(ptr1, len1 * 1);
-
-        }
-
-    };
-
-    const heap = new Array(32);
-
-    heap.fill(undefined);
-
-    heap.push(undefined, null, true, false);
-
-    let heap_next = heap.length;
-
-    function dropObject(idx) {
-        if (idx < 36) return;
-        heap[idx] = heap_next;
-        heap_next = idx;
-    }
-
-    __exports.__wbindgen_object_drop_ref = function(i) { dropObject(i); };
-
     function init(module) {
         let result;
-        const imports = { './packagedefinition': __exports };
+        const imports = { './hitwasm_xtea': __exports };
+
         if (module instanceof URL || typeof module === 'string' || module instanceof Request) {
 
             const response = fetch(module);
