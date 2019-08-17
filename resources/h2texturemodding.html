@@ -58,7 +58,7 @@
         <div class="main-content">
             <h1 id="g2-modscom">H2 Texture Modding</h1>
 
-		<h4 style="padding-left: 40px;"><img class="aligncenter" src="https://i.notex.app/Cot3mKv.png" /></h4>
+		<h4 style="padding-left: 40px;"><img class="aligncenter" src="/images/texturemodding/Cot3mKv.png" /></h4>
 		<h4 style="text-align: center; max-width: 100%;"><span style="color: #cc99ff;">For Hitman 2016 please use this tutorial written by HHCHunter: </span></h4>
 		<h4 style="text-align: center; max-width: 100%;"><span style="color: #cc99ff;"><a style="color: #cc99ff;" href="https://www.reddit.com/r/HiTMAN/comments/62klik/hitman_texture_modding_tutorial/">https://www.reddit.com/r/HiTMAN/comments/62klik/hitman_texture_modding_tutorial/</a></span></h4>
 		<h4>Requirements</h4>
@@ -66,7 +66,7 @@
 		    <li><a href="https://aluigi.altervista.org/quickbms.htm">QuickBMS</a> (With the <a href="https://raw.githubusercontent.com/pawREP/ZHM5PatchBuilder/master/QuickBMS_script/Hitman2_rpkg.bms">Hitman 2 RPKG script</a>)</li>
 		    <li><a href="https://github.com/pawREP/ZHM5PatchBuilder">Hitman 2 RPKG Patch Builder</a> (Thank you pawREP for this tool)</li>
 		    <li><a href="/tools/online/xtea/index.html">XTEA Online WebAssembly Powered Editor</a> (Used to modify packagedefintions.txt) Replacement for the old h6xxtea tool.</li>
-		    <li><a href="https://www.richwhitehouse.com/index.php?content=inc_projects.php&amp;showproject=91">Noesis</a> (With <a href="https://i.notex.app/tex_Hitman2_PC_dat_vap.py">Hitman 2's Texture Plugin</a> - Thanks to Acewell from <a href="https://forum.xentax.com/memberlist.php?mode=viewprofile&u=4970">Xentax</a>)</li>
+		    <li><a href="https://www.richwhitehouse.com/index.php?content=inc_projects.php&amp;showproject=91">Noesis</a> (With <a href="/images/texturemodding/tex_Hitman2_PC_dat_vap.py">Hitman 2's Texture Plugin</a> - Thanks to Acewell from <a href="https://forum.xentax.com/memberlist.php?mode=viewprofile&u=4970">Xentax</a>)</li>
 		    <li><a href="https://www.adobe.com/au/products/photoshop.html">Photoshop</a> (With <a href="https://developer.nvidia.com/nvidia-texture-tools-adobe-photoshop">NVIDIA Texture Tools</a> or <a href="https://software.intel.com/en-us/articles/intel-texture-works-plugin">Intel® Texture Works Plugin</a>) or if you don't have Photoshop you can try <a href="https://www.getpaint.net/">Paint.net</a> (With <a href="https://forums.getpaint.net/topic/111731-dds-filetype-plus-2019-01-30/">DDS FileType Plus</a>)<br /><em>Note: Gimp may also work if you can find a DDS plugin for it, but I have not tried it.</em></li>
 		    <li>Hex Editor (I use <a href="https://mh-nexus.de/en/hxd/">HxD</a>)</li>
 		</ul>
@@ -101,29 +101,29 @@
 		<p>The patch archives just include updated versions and new files, so if you want to extract textures from one of the ET missions, you would most likely get that from the patch archives instead.</p>
 		<h4>Part III - Converting the texture files</h4>
 		<p>Since the texture files from the game have their own proprietary headers in them, you will need to convert them using Noesis. Before doing this, please make sure you have copied the Hitman script for Noesis into the required folder that is shown in the first part of this guide. Now that that's out of the way, you can open Noesis. Open up the TEXD folder in Noesis by browsing to it and you should then be greeted with a list of all the textures:</p>
-		<p><img style="max-width: 100%;" src="https://i.notex.app/HX4HKCc.png" /></p>
+		<p><img style="max-width: 100%;" src="/images/texturemodding/HX4HKCc.png" /></p>
 		<p>Unfortunately they only have hashes for their file names so finding a specific texture can be a bit tricky and tedious. But once you do find the texture you would like to modify, note down it's file name in a text document. Also you'll need to note down the specific format for your chosen texture file as well, to do this you will need to open the "Data Viewer" in Noesis</p>
-		<p><img style="max-width: 100%;" src="https://i.notex.app/ZMmwQ0B.png" /></p>
+		<p><img style="max-width: 100%;" src="/images/texturemodding/ZMmwQ0B.png" /></p>
 		<p>When you have this open, expand Model &gt; Textures &gt; Texture 0 and you should see "Type: #"</p>
-		<p><img style="max-width: 100%;" src="https://i.notex.app/aXY4kjH.png" /></p>
+		<p><img style="max-width: 100%;" src="/images/texturemodding/aXY4kjH.png" /></p>
 		<p>Here is what all the different types are:</p>
 		<p style="padding-left: 30px;">Type 1 = R8G8<br />Type 2 = A8<br />Type 3 = BC1/DXT1<br />Type 4 = BC3/DXT5<br />Type 5 = BC4/ATI1<br />Type 6 = BC5/ATI2<br />Type 7 = BC7</p>
 		<p>Once you've done all that you can now convert the texture by right clicking it in Noesis and then choosing "Export":</p>
-		<p><img style="max-width: 100%;" src="https://i.notex.app/Ea21XAh.png" /></p>
+		<p><img style="max-width: 100%;" src="/images/texturemodding/Ea21XAh.png" /></p>
 		<p>Once you click that you'll be greeted with this window:</p>
-		<p><img style="max-width: 100%;" src="https://i.notex.app/PHcfC4U.png" /></p>
+		<p><img style="max-width: 100%;" src="/images/texturemodding/PHcfC4U.png" /></p>
 		<p>You will need to choose .dds as the main output type, none of the other settings need to be modified. You can now press "Export".</p>
 		<h4>Part <span class="md-raw-html">IV - Modifying the texture</span></h4>
 		<p>Head into the TEXD folder in Windows Explorer and search for the file name that you noted down earlier. You should see two files, the original and the converted file. Please don't delete the original file, it is needed for the final part.</p>
 		<p>Open the DDS in either Photoshop or Paint.net and make your desired modifications. After that you can save it as a DDS file. Make sure you save it as the right format that you noted down earlier. You can also save as no alpha or alpha. If your texture doesn't have any transparency, you can just save it as no alpha. Make sure MIP Map generation is set to "Generate MIP maps" otherwise the texture will vanish if you get too far away from it in-game.</p>
-		<p><img style="max-width: 100%;" src="https://i.notex.app/cc8GZKs.png" /></p>
+		<p><img style="max-width: 100%;" src="/images/texturemodding/cc8GZKs.png" /></p>
 		<p>Once that's saved you can now open it in a hex editor alongside the original texture as well.</p>
 		<p>You will need to copy this section from the original texture:</p>
-		<p><img style="max-width: 100%;" src="https://i.notex.app/iciE2mu.png" /></p>
+		<p><img style="max-width: 100%;" src="/images/texturemodding/iciE2mu.png" /></p>
 		<p>and replace this section in your new texture:</p>
-		<p><img style="max-width: 100%;" src="https://i.notex.app/Sa2tITo.png" /></p>
+		<p><img style="max-width: 100%;" src="/images/texturemodding/Sa2tITo.png" /></p>
 		<p>So it should look like this in the end:</p>
-		<p><img style="max-width: 100%;" src="https://i.notex.app/kPR7ABl.png" /></p>
+		<p><img style="max-width: 100%;" src="/images/texturemodding/kPR7ABl.png" /></p>
 		<p>Once you've done that you can save it.</p>
 		<h4>Part V - Rebuilding the modified texture back into the game</h4>
 		<p>You will now need to use the patch builder to create a patch archive that will contain your modified textures. See instructions for the patch builder here: <a href="https://github.com/pawREP/ZHM5PatchBuilder">https://github.com/pawREP/ZHM5PatchBuilder</a></p>
