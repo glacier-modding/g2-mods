@@ -18,6 +18,9 @@
                 top: 15px;
                 left: 15px;
                 background-color: #1f2125;
+            }
+
+            #save span {
                 color: #05be99;
                 padding: 5px;
                 font-size: 16px;
@@ -26,7 +29,11 @@
                 border-bottom: 2px solid #05be99;
             }
 
-            #save:hover {
+            #save span {
+                margin: 0 2em;
+            }
+
+            #save span:hover {
                 background: #111111;
             }
 
@@ -65,8 +72,14 @@
         </style>
 	</head>
 	<body>
-        <div id="save" onclick="saveFile(event);">
-            Save File
+        <div id="save">
+            <span onclick="saveFile(event);">
+                Save File
+            </span>
+
+            <span onclick="autopatch(event);">
+                    Set Patch Levels
+            </span>
         </div>
 
         <div id="naming">
@@ -80,6 +93,11 @@
         
         <script src='./hitwasm/hitwasm_xtea.js'></script>
 		<script>
+
+            function autopatch(event) {
+                let target = document.getElementById("packagedefinitions");
+                target.value = target.value.replace(/patchlevel=\d+\n/gi, "patchlevel=10000\n");
+            }
 
             // Thumbs and PackageDefinitions Header
             const HEADER = [
@@ -112,6 +130,9 @@
                 let target = document.getElementById('packagedefinitions');
                 target.value = "Drag and drop packagedefinition.txt/thumbs.dat here.";
                 target.readOnly  = true;
+
+                let target2 = document.getElementById('packagedefinitions');
+                document.getElementById('save').style.visibility = 'hidden';
             }
 
             function enable() {
