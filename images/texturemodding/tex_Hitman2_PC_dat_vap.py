@@ -1,7 +1,7 @@
 from inc_noesis import *
 
 def registerNoesisTypes():
-    handle = noesis.register("Hitman 2 [PC]", ".dat;.vap")
+    handle = noesis.register("Hitman 2 [PC]", ".dat;.vap;.texd;.text")
     noesis.setHandlerTypeCheck(handle, noepyCheckType)
     noesis.setHandlerLoadRGBA(handle, noepyLoadRGBA)
     #noesis.logPopup()
